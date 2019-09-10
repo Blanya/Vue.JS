@@ -8,17 +8,6 @@
 </head>
 <body>
 
-    <style>
-    .alert
-    {
-        background-color: tomato;
-        text-align: center;
-        margin: 0 auto;
-        width: 30vw;
-        height: 5vh;
-    }
-    </style>
-
     <div id="app">
         <div class="container">
             <alert></alert>
@@ -36,8 +25,8 @@
         Vue.component('alert',
         {
             template: `<div class="alert">
-                       <p>A simple primary alert— check it out! </p>
-                       </div>`
+                        <p>A simple primary alert— check it out! </p>
+                        </div>`
         });
 
         let app= new Vue({
