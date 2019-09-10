@@ -21,7 +21,7 @@
     <div id="app">
         <input type="text" name="" id="" v-model="toDoText">
         <button @click="addNewThing" type="button"> Add </button>
-        <ul ><li :class="[seen ? activeClass : '', errorClass]" v-for="(thing, index) in things" ><input type="checkbox" name="" id="" v-model="seen" > {{thing.title}} <button @click="remove(index)">X</button></li></ul>
+        <ul ><li :class="{bClass: thing.seen}" v-for="(thing, index) in things" ><input type="checkbox" name="" id="" v-model="thing.seen"> {{thing.title}} <button @click="remove(index)">X</button></li></ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -31,14 +31,11 @@
             data: 
             {
                 toDo: ' ',
-                activeClass: 'bClass',
-                errorClass: 'normalClass',
-                seen: false,
                 things:
                 [
                 {
                     title: "Faire l'exo de JB",
-                    checkbox: index=id,
+                    seen: false,
                 }
                 ]
             },
@@ -46,7 +43,7 @@
             {
             addNewThing: function () {
             this.things.push({
-            title: this.toDoText,
+            title: this.toDoText, seen: false,
             })
             this.toDoText = ' ';
             },

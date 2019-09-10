@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+    .alert-primary
+    {
+        background-color: tomato;
+        text-align: center;
+        margin: 0 auto;
+        width: 30vw;
+        height: 5vh;
+    }
+    .alert-succes
+    {
+        background-color: green;
+        text-align: center;
+        margin: 0 auto;
+        width: 30vw;
+        height: 5vh;
+    }
+    </style>
+
+    <div id="app">
+        <div class="container">
+            <alert message="Ceci est un message important" type="alert-primary"></alert>
+            <alert message="Ceci est un message de succès" type="alert-succes"></alert>
+            <alert></alert>
+            <alert></alert>
+            <alert></alert>
+        </div>
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('alert',
+        {
+            template: `<div :class="type">
+                       <p>{{message}}</p>
+                       </div>`,
+            props: ['message', 'type']
+        });
+
+        let app= new Vue({
+            el: '#app'
+        });
+
+        
+    </script>
+</body>
+</html>
