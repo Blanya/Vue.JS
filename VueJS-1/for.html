@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    img{ width: 30vw;}
+    </style>
+        <div id="app">
+            <!-- <a v-for="link in links" :href="link.link"><h3>{{//link.//text}}</h3></a> -->
+            <img src="img/groot.jpg" alt="Groot" v-show="seen" />
+            <button @click="change">Faire apparaître ou disparaître l'image</button>
+        </div>
+
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        let app= new Vue({
+            el: '#app',
+            data: 
+            {
+                seen: true,
+            },
+            methods :
+            {
+                change: function()
+                {
+                    if(this.seen)
+                    {
+                        this.seen=false;
+                    }else{this.seen=true;}
+                    //this.seen = !this.seen;
+                    //this.seen = this.seen ? false: true;
+                }
+
+            }
+            //     {links: [
+            //         {
+            //             text:"Google",
+            //             link:"https://www.google.com/",
+            //         },
+            //         {
+            //             text:"Youtube",
+            //             link:"https://www.youtube.com",
+            //         },
+            //         {
+            //             text:"Linkedin",
+            //             link:"https://www.linkedin.com",
+            //         },
+    
+            //     ]
+            // }
+        })
+    </script>
+</body>
+</html>

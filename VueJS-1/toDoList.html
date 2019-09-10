@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    .normalClass
+    {
+        text-decoration: none;
+    }
+    .bClass
+    {
+        text-decoration: line-through;
+    }
+    </style>
+    <h1>To do list</h1>
+    <div id="app">
+        <input type="text" name="" id="" v-model="toDoText">
+        <button @click="addNewThing" type="button"> Add </button>
+        <ul ><li :class="[seen ? activeClass : '', errorClass]" v-for="(thing, index) in things" ><input type="checkbox" name="" id="" v-model="seen" > {{thing.title}} <button @click="remove(index)">X</button></li></ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app= new Vue({
+            el: "#app",
+            data: 
+            {
+                toDo: ' ',
+                activeClass: 'bClass',
+                errorClass: 'normalClass',
+                seen: false,
+                things:
+                [
+                {
+                    title: "Faire l'exo de JB",
+                    checkbox: index=id,
+                }
+                ]
+            },
+            methods: 
+            {
+            addNewThing: function () {
+            this.things.push({
+            title: this.toDoText,
+            })
+            this.toDoText = ' ';
+            },
+            remove: function(index)
+            {
+                this.things.splice(index,1)
+            },
+            }
+        })
+    </script>
+</body>
+</html>
