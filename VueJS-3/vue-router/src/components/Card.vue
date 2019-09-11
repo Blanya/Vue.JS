@@ -16,4 +16,6 @@ export default {
     }
     }
 }
+
+// Utilisation kebab-case et non kamel-case ATTENTION ( utilisation Kamel-case fonctionnelle ici ?)
 </script>
