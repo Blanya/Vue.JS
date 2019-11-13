@@ -1,7 +1,9 @@
 <template>
-  <div class="todolist">
+  <div>
+    <div class="todolist">
     <h1>{{listTitle}}</h1>
-    <list  v-for="list in lists" :key="list"></list>
+    <list  v-for="list in lists" :key="list" class="list"></list>
+    </div>
     <button @click="addList">Ajouter une liste</button>
     <button @click="remove">Supprimer les listes</button>
   </div>
@@ -37,3 +39,16 @@ export default {
    
 }
 </script>
+<style scoped>
+.todolist
+{
+  display: flex;
+  flex-wrap: wrap;
+}
+button
+{
+  width: 10vw;
+  height: 2vw;
+  background-color: lavender;
+}
+</style>

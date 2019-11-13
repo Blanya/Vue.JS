@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Pomodoro</router-link> |
-      <router-link to="/Todolist">To do list</router-link>
+      <router-link to="/Todolist">To do list</router-link> |
+      <!-- <router-link to="/Pomo">Pomo</router-link> -->
     </div>
     <router-view/>
   </div>
@@ -22,7 +23,7 @@
     font-weight: bold;
     color: #2c3e50;
     &.router-link-exact-active {
-      color: #42b983;
+      color: tomato;
     }
   }
 }

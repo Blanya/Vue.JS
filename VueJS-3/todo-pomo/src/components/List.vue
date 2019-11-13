@@ -16,8 +16,18 @@ export default {
     },
     data: function(){
       return{
-        listTitle:'',
+        listTitle:'Titre de la liste',
       }
     },
 }
 </script>
+
+<style scoped>
+.FstList
+{
+  width: 29.5vw;
+  margin: 2em;
+  background-color: rgb(231, 214, 220);
+  padding-top: 4vh;
+}
+</style>

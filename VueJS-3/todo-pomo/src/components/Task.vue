@@ -15,8 +15,8 @@ export default {
         return{
             toDoText: '',
             things: 
-            [{title: "Hello", 
-            seen:false}]
+            [{title:'Première tâche', 
+            seen:false,}]
         }
     },
     props:['listTitle'],
