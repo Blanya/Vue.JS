@@ -14,23 +14,41 @@ export default {
     {
         return{
             toDoText: '',
-            things: 
-            [{title:'Première tâche', 
-            seen:false,}]
+            things: [ ],
         }
     },
+    mounted() {
+    if(localStorage.getItem('things')) {
+        try {
+        this.things = JSON.parse(localStorage.getItem('things'));
+      } catch(e) {
+        localStorage.removeItem('things');
+      }
+    }
+  },
     props:['listTitle'],
     methods: {
         addNewThing: function () 
         {
+            if(!this.toDoText)
+            {
+                return;
+            }
             this.things.push({
             title: this.toDoText, seen: false,})
             this.toDoText = ' ';
+            this.saveThings();
         },
-        remove: function(index)
+        remove: function(index) 
         {
-        this.things.splice(index,1)
+        this.things.splice(index,1);
+        this.saveThings();
         },
+        saveThings() 
+        {
+        const parsed = JSON.stringify(this.things);
+        localStorage.setItem('things', parsed);
+        }
     }
 }
 </script>
