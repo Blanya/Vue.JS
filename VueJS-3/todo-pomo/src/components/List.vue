@@ -32,6 +32,7 @@ export default {
     }
     },
     methods:{
+      //add function addTitle to save it 
       remove: function()
       {
         this.seen
